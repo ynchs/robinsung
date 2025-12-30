@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Robin Sung</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #fafafa;
+            --bg-secondary: #ffffff;
+            --text-primary: #1a1a1a;
+            --text-secondary: #666666;
+            --accent: #2563eb;
+            --border: #e5e5e5;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* Navigation */
+        nav {
+            padding: 48px 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .logo {
+            font-size: 18px;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+
+        .logo a {
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 15px;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--text-primary);
+        }
+
+        /* About Content */
+        .about-hero {
+            padding: 120px 0 80px;
+        }
+
+        .about-title {
+            font-family: 'Crimson Pro', serif;
+            font-size: 64px;
+            font-weight: 600;
+            line-height: 1.1;
+            margin-bottom: 48px;
+            letter-spacing: -0.02em;
+        }
+
+        .about-intro {
+            font-size: 20px;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 64px;
+            max-width: 720px;
+        }
+
+        .about-section {
+            padding: 64px 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .section-title {
+            font-family: 'Crimson Pro', serif;
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 32px;
+            letter-spacing: -0.01em;
+        }
+
+        .section-content {
+            font-size: 18px;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            max-width: 720px;
+        }
+
+        .section-content p {
+            margin-bottom: 24px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 48px;
+            margin-top: 48px;
+        }
+
+        .skill-category h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+        }
+
+        .skill-category ul {
+            list-style: none;
+        }
+
+        .skill-category li {
+            padding: 8px 0;
+            color: var(--text-secondary);
+            font-size: 16px;
+        }
+
+        /* Contact */
+        .contact-links {
+            display: flex;
+            gap: 24px;
+            margin-top: 48px;
+        }
+
+        .contact-link {
+            padding: 14px 28px;
+            background: var(--text-primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 15px;
+            font-weight: 500;
+            transition: opacity 0.2s;
+        }
+
+        .contact-link:hover {
+            opacity: 0.8;
+        }
+
+        .contact-link.secondary {
+            background: transparent;
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+        }
+
+        /* Footer */
+        footer {
+            padding: 80px 0 48px;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 14px;
+            border-top: 1px solid var(--border);
+            margin-top: 120px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .about-title {
+                font-size: 48px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .container {
+                padding: 0 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <div class="logo"><a href="index.html">Robin Sung</a></div>
+            <div class="nav-links">
+                <a href="index.html">Work</a>
+                <a href="about.html" class="active">About</a>
+            </div>
+        </nav>
+
+        <section class="about-hero">
+            <h1 class="about-title">About</h1>
+            <p class="about-intro">
+                I'm a partner marketing lead based in San Francisco, specializing in building bridges between technology companies and enterprise buyers across borders.
+            </p>
+        </section>
+
+        <section class="about-section">
+            <h2 class="section-title">Background</h2>
+            <div class="section-content">
+                <p>
+                    I approach partner marketing with a perspective informed by behavioral research and systems thinking. My background — sociology at NYU, UX design, and now growth marketing — taught me to design experiences that guide behavior, not just communicate value.
+                </p>
+                <p>
+                    As a Korean-American, I naturally bridge the gap between Asian tech companies and U.S. enterprise buyers. I've spent the past three years translating technical innovation into American business language, and complex procurement processes into actionable partner guidance.
+                </p>
+                <p>
+                    For the past three years, I've led Korea's national tech pavilion at major U.S. conferences — TechCrunch Disrupt, RSA Conference, and SEMICON West — helping 90+ companies generate measurable pipeline with Fortune 500 enterprises including Google, Tesla, Meta, Intel, and Amazon.
+                </p>
+            </div>
+        </section>
+
+        <section class="about-section">
+            <h2 class="section-title">What I Do</h2>
+            <div class="section-content">
+                <p>
+                    Most marketers excel at either strategy or execution. I believe they're inseparable. I design the framework, then ensure every touchpoint — from email subject lines to booth aesthetics — reflects quality standards.
+                </p>
+                <p>
+                    My work focuses on three core areas:
+                </p>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Partner GTM & Co-Marketing</h3>
+                    <ul>
+                        <li>Joint go-to-market strategy</li>
+                        <li>Co-marketing campaign design</li>
+                        <li>Partner enablement programs</li>
+                        <li>MDF management & optimization</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Event-Led Growth</h3>
+                    <ul>
+                        <li>End-to-end tradeshow programs</li>
+                        <li>Executive roundtable curation</li>
+                        <li>Networking event production</li>
+                        <li>Post-event pipeline tracking</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Cross-Border Market Entry</h3>
+                    <ul>
+                        <li>Value proposition translation</li>
+                        <li>Enterprise sales enablement</li>
+                        <li>Stakeholder mapping & matching</li>
+                        <li>Cultural bridge-building</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Technical Skills</h3>
+                    <ul>
+                        <li>CRM systems & data architecture</li>
+                        <li>Email & landing page optimization</li>
+                        <li>ROI measurement & attribution</li>
+                        <li>Currently learning: Salesforce, HubSpot</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-section">
+            <h2 class="section-title">Philosophy</h2>
+            <div class="section-content">
+                <p>
+                    I don't follow existing playbooks — I build systems that partners can scale independently while maintaining quality standards. When I didn't have a CRM budget, I built tracking infrastructure in Google Sheets. When partners needed enablement, I created the curriculum myself. When booth designs didn't meet standards, I redesigned them.
+                </p>
+                <p>
+                    Most importantly: I care if my partners succeed. If they spend months preparing for an event, fly to San Francisco, invest $50K in a booth, then get zero results because the follow-up system was broken — that's on me.
+                </p>
+            </div>
+        </section>
+
+        <section class="about-section">
+            <h2 class="section-title">Let's Connect</h2>
+            <div class="section-content">
+                <p>
+                    I'm currently exploring Partner Marketing opportunities at B2B SaaS and AI-native companies in the San Francisco Bay Area. I'm particularly interested in roles where strategic thinking and operational excellence are equally valued.
+                </p>
+            </div>
+
+            <div class="contact-links">
+                <a href="mailto:yunchai.ys@gmail.com" class="contact-link">Email Me</a>
+                <a href="https://linkedin.com/in/yunchai" class="contact-link secondary">LinkedIn</a>
+                <a href="#" class="contact-link secondary">Resume</a>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            © 2025 Robin Sung — Partner Marketing Lead
+        </div>
+    </footer>
+</body>
+</html>

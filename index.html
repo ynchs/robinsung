@@ -35,13 +35,30 @@
             padding: 0 40px;
         }
 
-        /* Navigation */
+        /* Navigation - Transparent & Sticky */
         nav {
-            padding: 48px 0 24px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 24px 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid var(--border);
+            background: rgba(250, 250, 250, 0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            background: rgba(250, 250, 250, 0.95);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        body {
+            padding-top: 80px;
         }
 
         .logo {
@@ -106,8 +123,17 @@
             justify-content: center;
             color: var(--text-secondary);
             font-size: 14px;
-            position: sticky;
-            top: 40px;
+        }
+
+        /* Full-width layout for projects 1, 4, 6 */
+        .project.full-width {
+            grid-template-columns: 1fr;
+            gap: 48px;
+        }
+
+        .project.full-width .project-image {
+            aspect-ratio: 16/9;
+            max-height: 600px;
         }
 
         .project-content {
@@ -120,6 +146,15 @@
             text-transform: uppercase;
             letter-spacing: 0.1em;
             margin-bottom: 16px;
+        }
+
+        .project-number {
+            font-size: 11px;
+            color: var(--text-secondary);
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            margin-bottom: 8px;
+            opacity: 0.5;
         }
 
         .project-title {
@@ -160,10 +195,98 @@
             font-weight: 400;
         }
 
-        /* Hero - PDF Style */
+        /* Hero - PDF Style with Profile */
         .hero {
             padding: 100px 0 80px;
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 80px;
+            align-items: start;
         }
+
+        .hero-content {
+            max-width: 720px;
+        }
+
+        .hero-profile {
+            position: relative;
+            width: 300px;
+            height: 300px;
+        }
+
+        .profile-image {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--bg-secondary);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Sketch Illustration */
+        .hero-illustration {
+            position: absolute;
+            width: 450px;
+            height: 450px;
+            top: -80px;
+            left: -100px;
+            pointer-events: none;
+            opacity: 0.9;
+        }
+
+        .sketch-element {
+            stroke: #2563eb;
+            stroke-width: 2;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .sketch-fill {
+            fill: rgba(37, 99, 235, 0.05);
+        }
+
+        .laptop-glow {
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        .idea-bulb {
+            animation: pulse 2s ease-in-out infinite;
+            transform-origin: center;
+        }
+
+        .connection-line {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: draw 3s ease-in-out infinite;
+        }
+
+        .floating-dot {
+            animation: float-dot 3s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.6; }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        @keyframes draw {
+            0% { stroke-dashoffset: 1000; }
+            50% { stroke-dashoffset: 0; }
+            100% { stroke-dashoffset: -1000; }
+        }
+
+        @keyframes float-dot {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+
+
 
         .hero-label {
             font-size: 15px;
@@ -258,6 +381,17 @@
                 position: static;
             }
 
+            .hero {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+
+            .hero-profile {
+                width: 200px;
+                height: 200px;
+                margin: 0 auto;
+            }
+
             .hero-title {
                 font-size: 48px;
             }
@@ -293,22 +427,89 @@
         <nav>
             <div class="logo">Robin Sung</div>
             <div class="nav-links">
-                <a href="#work">Work</a>
-                <a href="#contact">Contact</a>
+                <a href="index.html">Work</a>
+                <a href="about.html">About</a>
             </div>
         </nav>
 
 
 
         <section class="hero">
-            <p class="hero-label">Partner Marketing Lead</p>
-            <h1 class="hero-title">
-                Think beyond owned resources,<br>
-                Design growth through leverage.
-            </h1>
-            <p class="hero-description">
-                I was given the same budget and the same playbook as everyone else — but consistently activated results the program had <span class="highlight">never seen before</span>.
-            </p>
+            <div class="hero-content">
+                <p class="hero-label">Partner Marketing Lead</p>
+                <h1 class="hero-title">
+                    Think beyond owned resources,<br>
+                    Design growth through leverage.
+                </h1>
+                <p class="hero-description">
+                    I was given the same budget and the same playbook as everyone else — but consistently activated results the program had <span class="highlight">never seen before</span>.
+                </p>
+            </div>
+
+            <div class="hero-profile">
+                <svg class="hero-illustration" viewBox="0 0 450 450" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Laptop -->
+                    <g class="laptop-glow">
+                        <rect x="50" y="280" width="140" height="90" class="sketch-element sketch-fill" rx="4"/>
+                        <rect x="50" y="280" width="140" height="90" class="sketch-element" rx="4"/>
+                        <line x1="70" y1="295" x2="170" y2="295" class="sketch-element"/>
+                        <line x1="70" y1="305" x2="150" y2="305" class="sketch-element"/>
+                        <line x1="70" y1="315" x2="165" y2="315" class="sketch-element"/>
+                        <path d="M 40 370 L 200 370 L 210 385 L 30 385 Z" class="sketch-element sketch-fill"/>
+                    </g>
+
+                    <!-- Light bulb (ideas) -->
+                    <g class="idea-bulb">
+                        <circle cx="350" cy="80" r="25" class="sketch-element sketch-fill"/>
+                        <path d="M 335 105 L 335 120 L 365 120 L 365 105" class="sketch-element"/>
+                        <line x1="340" y1="120" x2="340" y2="125" class="sketch-element"/>
+                        <line x1="350" y1="120" x2="350" y2="125" class="sketch-element"/>
+                        <line x1="360" y1="120" x2="360" y2="125" class="sketch-element"/>
+                        <!-- Light rays -->
+                        <line x1="350" y1="45" x2="350" y2="30" class="sketch-element"/>
+                        <line x1="385" y1="60" x2="395" y2="50" class="sketch-element"/>
+                        <line x1="390" y1="95" x2="405" y2="95" class="sketch-element"/>
+                        <line x1="315" y1="60" x2="305" y2="50" class="sketch-element"/>
+                    </g>
+
+                    <!-- Connection lines -->
+                    <path class="connection-line sketch-element" 
+                          d="M 120 250 Q 200 150 320 100"/>
+                    
+                    <!-- Floating dots/nodes -->
+                    <circle class="floating-dot sketch-element sketch-fill" cx="250" cy="170" r="8" 
+                            style="animation-delay: 0s"/>
+                    <circle class="floating-dot sketch-element sketch-fill" cx="180" cy="200" r="6" 
+                            style="animation-delay: 0.5s"/>
+                    <circle class="floating-dot sketch-element sketch-fill" cx="290" cy="130" r="7" 
+                            style="animation-delay: 1s"/>
+
+                    <!-- Coffee cup -->
+                    <g style="animation: pulse 3s ease-in-out infinite; transform-origin: center;">
+                        <rect x="330" y="350" width="50" height="60" class="sketch-element sketch-fill" rx="0" ry="40"/>
+                        <ellipse cx="355" cy="350" rx="25" ry="8" class="sketch-element"/>
+                        <path d="M 380 365 Q 400 365 400 380 Q 400 395 380 395" class="sketch-element"/>
+                        <!-- Steam -->
+                        <path d="M 345 340 Q 345 330 350 335" class="sketch-element" style="animation: float-dot 1.5s ease-in-out infinite;"/>
+                        <path d="M 365 340 Q 365 325 370 335" class="sketch-element" style="animation: float-dot 1.8s ease-in-out infinite; animation-delay: 0.3s;"/>
+                    </g>
+
+                    <!-- Location pin (SF) -->
+                    <g style="animation: bounce 2s ease-in-out infinite; transform-origin: center;">
+                        <path d="M 80 100 Q 80 80 95 80 Q 110 80 110 100 Q 110 120 95 140 Q 80 120 80 100" 
+                              class="sketch-element sketch-fill"/>
+                        <circle cx="95" cy="95" r="5" fill="#2563eb"/>
+                        <text x="88" y="100" font-size="10" fill="#2563eb" font-weight="bold">SF</text>
+                    </g>
+
+                    <!-- Network connections -->
+                    <circle cx="400" cy="200" r="20" class="sketch-element sketch-fill"/>
+                    <circle cx="420" cy="260" r="15" class="sketch-element sketch-fill"/>
+                    <line x1="405" y1="215" x2="415" y2="250" class="sketch-element"/>
+                </svg>
+
+                <img src="profile.svg" alt="Robin Sung" class="profile-image">
+            </div>
         </section>
 
         <section class="trust-signals">
@@ -323,18 +524,19 @@
 
         <section id="work" class="projects">
             <!-- Project 1 -->
-            <article class="project">
+            <article class="project full-width">
                 <div class="project-image">
                     Project Thumbnail<br>
                     <small>Korea Pavilion Brand</small>
                 </div>
                 <div class="project-content">
+                    <div class="project-number">01</div>
                     <div class="project-label">KOTRA Korea Pavilion | 2024, 2025</div>
                     <h2 class="project-title">High-Growth Demand Program</h2>
                     <p class="project-description">
                         KOTRA participates in multiple Tier-1 tech conferences each year. Instead of treating each event as a one-off activation, I reframed the Korea Pavilion as a long-term partner GTM platform and built a single, recognizable brand across conferences. Between 2024 and 2025, I led end-to-end partner marketing strategy and execution across TechCrunch Disrupt, RSA Conference, and SEMICON West, <span class="highlight">delivering the strongest results in the program's decade-long history and playing a key role in preventing the discontinuation of a $2M national initiative.</span>
                     </p>
-                    <a href="/cdn-cgi/l/email-protection#3d4452484f1058505c54517d58455c504d5158135e5250024e485f57585e49006f584c48584e491d7958495c54514e071d75545a55107a4f524a49551d7958505c53591d6d4f525a4f5c50" class="request-details">
+                    <a href="/cdn-cgi/l/email-protection#156c607b767d747c3b6c66557278747c793b767a782a6660777f707661284770646070666135517061747c79662f355d7c727d3852677a62617d35517078747b713545677a72677478" class="request-details">
                         Request Details
                     </a>
                 </div>
@@ -347,12 +549,13 @@
                     <small>Executive Roundtable</small>
                 </div>
                 <div class="project-content">
+                    <div class="project-number">02</div>
                     <div class="project-label">KOTRA Korea Pavilion | 2025</div>
                     <h2 class="project-title">Curating Executive Roundtables</h2>
                     <p class="project-description">
                         SEMICON West 2025 was held in Phoenix for the first time, where the Korea Pavilion networking event faced limited local visibility. I redesigned the format into a curated executive-level roundtable, securing top-requested speakers and decision-makers from Intel, SEMI, and ASM through direct outreach and close collaboration with SEMI. <span class="highlight">This shift transformed the event from a peripheral gathering into a high-demand executive forum, significantly improving attendance quality and positioning the Pavilion as a credible enterprise engagement channel.</span>
                     </p>
-                    <a href="/cdn-cgi/l/email-protection#99e0f6ecebb4fcf4f8f0f5d9fce1f8f4e9f5fcb7faf6f4a6eaecfbf3fcfaeda4cbfce8ecfceaedb9ddfcedf8f0f5eaa3b9dce1fcfaecedf0effcb9cbf6ecf7fdedf8fbf5fcea" class="request-details">
+                    <a href="/cdn-cgi/l/email-protection#acd5d9c2cfc4cdc582d5dfeccbc1cdc5c082cfc3c1" class="request-details">
                         Request Details
                     </a>
                 </div>
@@ -365,30 +568,32 @@
                     <small>Cross-Border Matching</small>
                 </div>
                 <div class="project-content">
+                    <div class="project-number">03</div>
                     <div class="project-label">KOTRA Silicon Valley | 2025</div>
                     <h2 class="project-title">Cross-Border Government Delegation</h2>
                     <p class="project-description">
                         Cross-border public-sector matching typically takes months of research and outreach. I shortened this cycle to 15 days. When the Seoul Infrastructure Agency requested introductions to the California Department of Transportation (Caltrans) and targeted mobility organizations, I identified the correct stakeholders within three days, leveraged existing relationships to secure warm introductions, and coordinated qualified meetings within two weeks. <span class="highlight">This marked the first paid matching service revenue in the KOTRA Silicon Valley office that year.</span>
                     </p>
-                    <a href="/cdn-cgi/l/email-protection#3b42544e49165e565a52577b5e435a564b575e1558545604484e59515e584f06695e4a4e5e484f1b7f5e4f5a525748011b7849544848167954495f5e491b7f5e575e5c5a4f525455" class="request-details">
+                    <a href="/cdn-cgi/l/email-protection#ef969a818c878e86c1969caf88828e8683c18c8082" class="request-details">
                         Request Details
                     </a>
                 </div>
             </article>
 
             <!-- Project 4 -->
-            <article class="project">
+            <article class="project full-width">
                 <div class="project-image">
                     Project Thumbnail<br>
                     <small>Startup Pitching Program</small>
                 </div>
                 <div class="project-content">
+                    <div class="project-number">04</div>
                     <div class="project-label">KOTRA Korea Pavilion | 2024</div>
                     <h2 class="project-title">Startup Pitching & GTM Training</h2>
                     <p class="project-description">
                         For the 2024 TechCrunch Disrupt startup pitching program, I built a partner readiness initiative to help startups with strong technology but limited U.S. market experience engage buyers and investors more effectively. The program combined GTM training, pitch coaching, and cohort-based progression, with personally secured judges from Sequoia Capital, a16z, and Google Ventures. <span class="highlight">The program drove a 12% lift in Korea Pavilion engagement with above 95% partner satisfaction across cohorts.</span>
                     </p>
-                    <a href="/cdn-cgi/l/email-protection#4930263c3b642c24282025092c31282439252c672a2624763a3c2b232c2a3d741b2c383c2c3a3d690d2c3d2820253a73691a3d283b3d3c396919203d2a2120272e69193b262e3b2824" class="request-details">
+                    <a href="/cdn-cgi/l/email-protection#5e272b303d363f3770272d1e39333f3732703d3133" class="request-details">
                         Request Details
                     </a>
                 </div>
@@ -401,30 +606,32 @@
                     <small>Heaan Product Launch</small>
                 </div>
                 <div class="project-content">
+                    <div class="project-number">05</div>
                     <div class="project-label">Heaan enVector: RAG Data Encryption | 2025</div>
                     <h2 class="project-title">Heaan's First U.S. Product Launch</h2>
                     <p class="project-description">
                         Heaan is an encryption startup founded by Cheon, the creator of CKKS and a leading figure in fully homomorphic encryption, with its technology endorsed by Gartner. I built Heaan's U.S. market product value by translating fully homomorphic encryption into a clear enterprise slogan, "no decryption, no exposure." I delivered a complete GTM foundation, including the website, pitch deck, and sales scripts, within four weeks and launched the company's LinkedIn presence for the first time. <span class="highlight">This work secured Heaan's first U.S. enterprise POC within 90 days, following 18 months of stalled traction, and drove a 25× increase in LinkedIn engagement, reaching 200 followers in the first month.</span>
                     </p>
-                    <a href="/cdn-cgi/l/email-protection#8ef7e1fbfca3ebe3efe7e2ceebf6efe3fee2eba0ede1e3b1fdfbece4ebedfab3dcebfffbebfdfaaecaebfaefe7e2fdb4aec6ebefefe0aedefce1eafbedfaaec2effbe0ede6" class="request-details">
+                    <a href="/cdn-cgi/l/email-protection#3d4448535e555c5413444e7d5a505c5451135e5250" class="request-details">
                         Request Details
                     </a>
                 </div>
             </article>
 
             <!-- Project 6 -->
-            <article class="project">
+            <article class="project full-width">
                 <div class="project-image">
                     Project Thumbnail<br>
                     <small>AI Onboarding Agent</small>
                 </div>
                 <div class="project-content">
+                    <div class="project-number">06</div>
                     <div class="project-label">Atlassian Codegeist Hackathon | 2025</div>
                     <h2 class="project-title">AI-Driven Onboarding & Activation</h2>
                     <p class="project-description">
                         As part of Atlassian Codegeist, I built Onit, an AI onboarding agent designed to reduce friction for first-time business users adopting Jira. By converting CSV uploads into structured workflows, the system reduced setup time from hours to minutes. <span class="highlight">While built in a hackathon context, the project reflects the same partner marketing principle applied elsewhere in my work: removing friction to accelerate activation and adoption.</span>
                     </p>
-                    <a href="/cdn-cgi/l/email-protection#82fbedf7f0afe7efe3ebeec2e7fae3eff2eee7ace1edefbdf1f7e0e8e7e1f6bfd0e7f3f7e7f1f6a2c6e7f6e3ebeef1b8a2c3cba2cdece0ede3f0e6ebece5a2c3e5e7ecf6" class="request-details">
+                    <a href="/cdn-cgi/l/email-protection#a5dcd0cbc6cdc4cc8bdcd6e5c2c8c4ccc98bc6cac8" class="request-details">
                         Request Details
                     </a>
                 </div>
@@ -437,12 +644,13 @@
                     <small>Partner Benefit Program</small>
                 </div>
                 <div class="project-content">
+                    <div class="project-number">07</div>
                     <div class="project-label">Future Mobility: NEW MOVE | Upcoming 2026</div>
                     <h2 class="project-title">Partner Benefit Program</h2>
                     <p class="project-description">
                         For NEW MOVE 2026, I architected a partner benefit–driven buyer activation program that reframed KOTRA's inbound buyer objective as a core event incentive. Instead of recruiting overseas buyers through a separate process, <span class="highlight">I positioned a Korea visit package (including flights, accommodation, and access to major mobility events in Korea) as a qualification-based benefit for high-fit buyers attending NEW MOVE.</span> In parallel, I worked closely with the Autotech Council to activate their member network and attract a strong mix of U.S. mobility and automotive companies to the event.
                     </p>
-                    <a href="/cdn-cgi/l/email-protection#522b3d27207f373f333b3e12372a333f223e377c313d3f6d212730383731266f0037232737212672163726333b3e216872023320263c37207210373c37343b267202203d3520333f" class="request-details">
+                    <a href="/cdn-cgi/l/email-protection#fa838f9499929b93d48389ba9d979b9396d4999597" class="request-details">
                         Request Details
                     </a>
                 </div>
@@ -453,9 +661,9 @@
     <footer id="contact">
         <div class="footer-content">
             Robin Sung — Partner Marketing Lead<br>
-            Available for opportunities in San Francisco
+            Available for opportunities in San Francisco<br><br>
+            <a href="about.html" style="color: var(--accent); text-decoration: none;">More about me →</a>
         </div>
         <div class="footer-links">
-            <a href="/cdn-cgi/l/email-protection#6f16001a1d420a020e06032f0a170e021f030a410c0002">Email</a>
-            <a href="https://linkedin.com/in/yourprofile">LinkedIn</a>
-            <a href="#">Res
+            <a href="/cdn-cgi/l/email-protection#562f2338353e373f782f2516313b373f3a7835393b">Email</a>
+            <a href="https://linkedin.com/in/yunchai">
