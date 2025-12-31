@@ -177,6 +177,13 @@
             padding: 2px 0;
         }
 
+        /* Highlight for dark backgrounds */
+        .immersive-story .highlight {
+            background: rgba(37, 99, 235, 0.25);
+            padding: 4px 8px;
+            border-radius: 2px;
+        }
+
         /* Trust Signals - PDF Style */
         .trust-signals {
             padding: 100px 0 80px;
@@ -355,7 +362,7 @@
 
 
         .hero-label {
-            font-size: 15px;
+            font-size: 18px;
             color: var(--text-secondary);
             margin-bottom: 48px;
         }
@@ -363,7 +370,7 @@
         .hero-title {
             font-family: 'Crimson Pro', serif;
             font-size: 46px;
-            font-weight: 400;
+            font-weight: 600;
             line-height: 1.3;
             margin-bottom: 48px;
             letter-spacing: -0.03em;
@@ -608,6 +615,55 @@
             </div>
         </section>
 
+        <!-- Dark Story Section -->
+        <section class="immersive-story" style="background: #0a0a0a; color: #ffffff; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 120px 40px; position: relative;">
+            <div style="max-width: 680px; margin: 0 auto;">
+                
+                <div style="margin-bottom: 80px; font-family: 'Crimson Pro', serif; font-weight: 500;">
+                    <p style="font-size: 22px; line-height: 1.7; color: rgba(255, 255, 255, 0.9); margin-bottom: 2.5em;">
+                        In 2023, I was handed a program that had been <em style="font-style: italic;">failing for years</em>. For over a decade, KOTRA's overseas tradeshow program followed the same playbook: rent a $70K booth, send cold emails, and hope someone would stop by (They rarely did). There was no follow-up, no measurable return. By 2025, the Korean government was preparing to shut the conference programs down.
+                    </p>
+                    
+                    <p style="font-size: 22px; line-height: 1.7; color: rgba(255, 255, 255, 0.9); margin: 0;">
+                        <span class="highlight">In one year, I rebuilt the program and achieved what it hadn't in ten</span>: <em style="font-style: italic;">the first trackable ROI from partner deals with U.S. enterprises</em>, and a government decision to continue the program. I established a new standard for what partner marketing could look like at KOTRA Silicon Valley.
+                    </p>
+                </div>
+
+                <!-- Divider -->
+                <div style="border-top: 1px solid rgba(255, 255, 255, 0.1); margin: 80px 0;"></div>
+
+                <!-- Scroll Indicator -->
+                <div style="text-align: left;">
+                    <a href="#work" style="display: inline-flex; align-items: center; gap: 16px; font-family: 'Crimson Pro', serif; font-size: 42px; font-weight: 500; letter-spacing: -0.02em; color: rgba(255, 255, 255, 0.7); text-decoration: none; transition: all 0.3s ease; line-height: 1.3;">
+                        <span>↓</span>
+                        <span>Scroll to see how it worked</span>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <style>
+            .immersive-story a:hover {
+                gap: 16px;
+                color: rgba(255, 255, 255, 0.9);
+            }
+
+            @media (max-width: 768px) {
+                .immersive-story {
+                    padding: 80px 28px !important;
+                }
+                
+                .immersive-story p {
+                    font-size: 19px !important;
+                }
+                
+                .immersive-story a {
+                    font-size: 32px !important;
+                }
+            }
+        </style>
+
         <section id="work" class="projects">
             <!-- Project 1 -->
             <article class="project full-width">
@@ -622,7 +678,7 @@
                         KOTRA participates in multiple Tier-1 tech conferences each year. Instead of treating each event as a one-off activation, I reframed the Korea Pavilion as a unified partner GTM platform and built a single, recognizable brand across conferences. I led end-to-end strategy and execution across TechCrunch Disrupt, RSA Conference, and SEMICON West, delivering <span class="highlight">the strongest results in the program's decade-long history</span> and preventing the discontinuation of a $2M national initiative.
                     </p>
                     <div style="display: flex; gap: 16px; margin-top: 24px;">
-                        <a href="mailto:yunchai.ys@gmail.com?subject=Request Details: KOTRA Korea Pavilion" class="request-details">
+                        <a href="/cdn-cgi/l/email-protection#3148445f525950581f484271565c50585d1f525e5c0e4244535b5452450c635440445442451175544550585d420b117a7e656370117a5e43545011615047585d585e5f" class="request-details">
                             Request Details
                         </a>
                         <a href="#" class="request-details" style="background: transparent; border: 2px solid #171717; color: #171717;">
@@ -645,7 +701,7 @@
                         SEMICON West 2025 moved to Phoenix, where the Korea Pavilion's networking event faced limited local visibility. I redesigned it into a curated executive roundtable, <span class="highlight">securing top-requested speakers and decision-makers from Intel, SEMI, and ASM</span>. This transformed the event from a peripheral gathering into a high-demand executive forum, significantly improving attendance quality.
                     </p>
                     <div style="display: flex; gap: 16px; margin-top: 24px;">
-                        <a href="mailto:yunchai.ys@gmail.com?subject=Request Details: SEMICON West Executive Roundtable" class="request-details">
+                        <a href="/cdn-cgi/l/email-protection#1e676b707d767f7730676d5e79737f7772307d7173216d6b7c747b7d6a234c7b6f6b7b6d6a3e5a7b6a7f77726d243e4d5b53575d51503e497b6d6a3e5b667b7d6b6a77687b3e4c716b707a6a7f7c727b" class="request-details">
                             Request Details
                         </a>
                         <a href="#" class="request-details" style="background: transparent; border: 2px solid #171717; color: #171717;">
@@ -667,7 +723,7 @@
                     <p class="project-description">
                         Cross-border public-sector matching typically takes months. When the Seoul Infrastructure Agency requested introductions to Caltrans and mobility organizations, I <span class="highlight">identified the correct stakeholders within 3 days</span>, secured warm introductions, and coordinated qualified meetings within 2 weeks. This marked the first paid matching service revenue in the KOTRA Silicon Valley office that year.
                     </p>
-                    <a href="mailto:yunchai.ys@gmail.com?subject=Request Details: Cross-Border Government Delegation" class="request-details">
+                    <a href="/cdn-cgi/l/email-protection#bfc6cad1dcd7ded691c6ccffd8d2ded6d391dcd0d280cccaddd5dadccb82eddacecadacccb9ffbdacbded6d3cc859ffccdd0cccc92fdd0cddbdacd9ff8d0c9dacdd1d2dad1cb9ffbdad3dad8decbd6d0d1" class="request-details">
                         Request Details
                     </a>
                 </div>
@@ -685,7 +741,7 @@
                     <p class="project-description">
                         For TechCrunch Disrupt 2024, I built a partner readiness program combining GTM training, pitch coaching, and cohort-based progression with <span class="highlight">judges I secured from Sequoia Capital, a16z, and Google Ventures</span>. The program helped startups with strong technology but limited U.S. market experience engage investors effectively, driving 12% higher engagement and 95%+ partner satisfaction.
                     </p>
-                    <a href="mailto:yunchai.ys@gmail.com?subject=Request Details: Startup Pitching & GTM Training" class="request-details">
+                    <a href="/cdn-cgi/l/email-protection#ccb5b9a2afa4ada5e2b5bf8caba1ada5a0e2afa3a1f3bfb9aea6a9afb8f19ea9bdb9a9bfb8ec88a9b8ada5a0bff6ec9fb8adbeb8b9bcec9ca5b8afa4a5a2abeceaec8b9881ec98beada5a2a5a2ab" class="request-details">
                         Request Details
                     </a>
                 </div>
@@ -704,7 +760,7 @@
                         Heaan is an encryption startup founded by Cheon, creator of CKKS and endorsed by Gartner. I translated fully homomorphic encryption into a clear enterprise slogan, "no decryption, no exposure," and delivered a complete GTM foundation (website, pitch deck, sales scripts) within 4 weeks. This work <span class="highlight">produced Heaan's first U.S. enterprise POC within 90 days, following 18 months of stalled traction</span>, and drove a 25× increase in LinkedIn engagement.
                     </p>
                     <div style="display: flex; gap: 16px; margin-top: 24px;">
-                        <a href="mailto:yunchai.ys@gmail.com?subject=Request Details: Heaan Product Launch" class="request-details">
+                        <a href="/cdn-cgi/l/email-protection#6f161a010c070e0641161c2f08020e0603410c0002501c1a0d050a0c1b523d0a1e1a0a1c1b4f2b0a1b0e06031c554f270a0e0e014f3f1d000b1a0c1b4f230e1a010c07" class="request-details">
                             Request Details
                         </a>
                         <a href="https://www.linkedin.com/posts/heaan_your-data-is-most-at-risk-when-its-decrypted-activity-7359599277418954753-yhn9" target="_blank" class="request-details" style="background: transparent; border: 2px solid #171717; color: #171717;">
@@ -754,14 +810,86 @@
 
     <div class="container">
         <section class="trust-signals">
-            <div class="logos-placeholder">
-                Building bridges between partners<br><br>
-                <strong>Meta • Amazon • Google • Tesla • Nvidia<br>
-                Samsung • SK • TSMC • Intel</strong><br><br>
-                as well as public and research institutions<br><br>
-                <strong>Caltrans • Ministry of Trade, Industry and Energy • MSIT • KAIST • KATECH • KISA</strong>
+            <div class="container">
+                <p style="text-align: center; font-size: 16px; color: #6b7280; margin-bottom: 48px; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    Building bridges between partners
+                </p>
+                
+                <!-- Enterprise Logos Grid -->
+                <div class="logos-grid" style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 48px 32px; align-items: center; justify-items: center; margin-bottom: 64px; max-width: 1000px; margin-left: auto; margin-right: auto;">
+                    <img src="logo-meta.png" alt="Meta" style="height: 40px; width: auto; opacity: 0.7; transition: opacity 0.3s; object-fit: contain;">
+                    <img src="logo-amazon.png" alt="Amazon" style="height: 40px; width: auto; opacity: 0.7; transition: opacity 0.3s; object-fit: contain;">
+                    <img src="logo-google.png" alt="Google" style="height: 40px; width: auto; opacity: 0.7; transition: opacity 0.3s; object-fit: contain;">
+                    <img src="logo-tesla.png" alt="Tesla" style="height: 40px; width: auto; opacity: 0.7; transition: opacity 0.3s; object-fit: contain;">
+                    <img src="logo-nvidia.png" alt="Nvidia" style="height: 50px; width: auto; opacity: 0.7; transition: opacity 0.3s; object-fit: contain;">
+                    <img src="logo-samsung.png" alt="Samsung" style="height: 40px; width: auto; opacity: 0.7; transition: opacity 0.3s; object-fit: contain;">
+                    <img src="logo-sk.png" alt="SK" style="height: 50px; width: auto; opacity: 0.7; transition: opacity 0.3s; object-fit: contain;">
+                    <img src="logo-tsmc.png" alt="TSMC" style="height: 50px; width: auto; opacity: 0.7; transition: opacity 0.3s; object-fit: contain;">
+                    <img src="logo-lam.png" alt="Lam Research" style="height: 40px; width: auto; opacity: 0.7; transition: opacity 0.3s; object-fit: contain;">
+                    <img src="logo-intel.png" alt="Intel" style="height: 45px; width: auto; opacity: 0.7; transition: opacity 0.3s; object-fit: contain;">
+                </div>
+                
+                <p style="text-align: center; font-size: 16px; color: #6b7280; margin-bottom: 48px; margin-top: 80px; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    as well as public and research institutions
+                </p>
+                
+                <!-- Government & Institution Logos Grid -->
+                <div class="logos-grid-institutions" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 48px 32px; align-items: center; justify-items: center; max-width: 900px; margin-left: auto; margin-right: auto;">
+                    <img src="logo-caltrans.png" alt="Caltrans" style="height: 45px; width: auto; opacity: 0.7; transition: opacity 0.3s; object-fit: contain;">
+                    <img src="logo-motie.png" alt="Ministry of Trade, Industry and Energy" style="height: 50px; width: auto; opacity: 0.7; transition: opacity 0.3s; object-fit: contain;">
+                    <img src="logo-kaist.png" alt="KAIST" style="height: 45px; width: auto; opacity: 0.7; transition: opacity 0.3s; object-fit: contain;">
+                    <img src="logo-kisa.png" alt="KISA" style="height: 40px; width: auto; opacity: 0.7; transition: opacity 0.3s; object-fit: contain;">
+                    <img src="logo-semi.png" alt="SEMI" style="height: 50px; width: auto; opacity: 0.7; transition: opacity 0.3s; object-fit: contain;">
+                    <img src="logo-autotech.png" alt="Autotech Council" style="height: 40px; width: auto; opacity: 0.7; transition: opacity 0.3s; object-fit: contain;">
+                    <img src="logo-kotra.png" alt="KOTRA" style="height: 40px; width: auto; opacity: 0.7; transition: opacity 0.3s; object-fit: contain;">
+                </div>
             </div>
         </section>
+        
+        <style>
+            .logos-grid img:hover,
+            .logos-grid-institutions img:hover {
+                opacity: 1;
+            }
+            
+            @media (max-width: 1024px) {
+                .logos-grid {
+                    grid-template-columns: repeat(4, 1fr) !important;
+                    gap: 40px 24px !important;
+                }
+                
+                .logos-grid-institutions {
+                    grid-template-columns: repeat(3, 1fr) !important;
+                    gap: 40px 24px !important;
+                }
+            }
+            
+            @media (max-width: 768px) {
+                .logos-grid {
+                    grid-template-columns: repeat(3, 1fr) !important;
+                    gap: 32px 20px !important;
+                }
+                
+                .logos-grid img,
+                .logos-grid-institutions img {
+                    height: 32px !important;
+                    max-height: 32px !important;
+                }
+                
+                .logos-grid-institutions {
+                    grid-template-columns: repeat(2, 1fr) !important;
+                    gap: 32px 20px !important;
+                }
+            }
+            
+            @media (max-width: 480px) {
+                .logos-grid,
+                .logos-grid-institutions {
+                    grid-template-columns: repeat(2, 1fr) !important;
+                    gap: 28px 16px !important;
+                }
+            }
+        </style>
     </div>
 
     <section class="cta-section">
@@ -771,15 +899,4 @@
                 <h2 class="cta-title">Let's connect</h2>
             </div>
             <div class="cta-social">
-                <a href="/cdn-cgi/l/email-protection#9de4e8f3fef5fcf4b3e4eeddfaf0fcf4f1b3fef2f0">Email</a>
-                <a href="https://linkedin.com/in/yunchai">LinkedIn</a>
-            </div>
-        </div>
-    </section>
-
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-        // Scroll effect for navigation
-        window.addEventListener('scroll', () => {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 50) {
-                nav.cla
+                <a href="/cdn-cgi/l/email-protection#9de4e8f3fef5fcf4b3e4
