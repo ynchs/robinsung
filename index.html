@@ -141,10 +141,9 @@
         }
 
         .project-label {
-            font-size: 13px;
+            font-size: 16px;
             color: var(--text-secondary);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.05em;
             margin-bottom: 16px;
         }
 
@@ -435,7 +434,8 @@
 
         /* Responsive */
         @media (max-width: 968px) {
-            .project {
+            .project,
+            .project.full-width {
                 grid-template-columns: 1fr;
                 gap: 32px;
             }
@@ -445,8 +445,12 @@
                 order: 0;
             }
 
-            .project-image {
+            .project-image,
+            .project.full-width .project-image {
                 position: static;
+                width: 100%;
+                aspect-ratio: 16/9;
+                max-height: none;
             }
 
             .hero {
@@ -683,7 +687,7 @@
                 </div>
                 <div class="project-content">
                     <div class="project-number">05</div>
-                    <div class="project-label">Heaan enVector: RAG Data Encryption | 2025</div>
+                    <div class="project-label">Heaan EnVector: RAG Data Encryption | 2025</div>
                     <h2 class="project-title">Heaan's First U.S. Product Launch</h2>
                     <p class="project-description">
                         Heaan is an encryption startup founded by Cheon, the creator of CKKS and a leading figure in fully homomorphic encryption, with its technology endorsed by Gartner. I built Heaan's U.S. market product value by translating fully homomorphic encryption into a clear enterprise slogan, "no decryption, no exposure." I delivered a complete GTM foundation, including the website, pitch deck, and sales scripts, within four weeks and launched the company's LinkedIn presence for the first time. This work <span class="highlight">produced Heaan's first U.S. enterprise POC within 90 days, following 18 months of stalled traction</span>, and drove a 25× increase in LinkedIn engagement, reaching 200 followers in the first month.
@@ -721,7 +725,7 @@
                 </div>
                 <div class="project-content">
                     <div class="project-number">07</div>
-                    <div class="project-label">Future Mobility: NEW MOVE | Upcoming 2026</div>
+                    <div class="project-label">Future Mobility: New Move | Upcoming 2026</div>
                     <h2 class="project-title">Partner Benefit Program</h2>
                     <p class="project-description">
                         For NEW MOVE 2026, I architected a partner benefit–driven buyer activation program that reframed KOTRA's inbound buyer objective as a core event incentive. Instead of recruiting overseas buyers through a separate process, I <span class="highlight">positioned a Korea visit package (including flights, accommodation, and access to major mobility events in Korea) as a qualification-based benefit</span> for high-fit buyers attending NEW MOVE. In parallel, I worked closely with the Autotech Council to activate their member network and attract a strong mix of U.S. mobility and automotive companies to the event.
@@ -737,10 +741,10 @@
     <div class="container">
         <section class="trust-signals">
             <div class="logos-placeholder">
-                I build bridges between partners like these<br><br>
+                Building bridges between partners<br><br>
                 <strong>Meta • Amazon • Google • Tesla • Nvidia<br>
                 Samsung • SK • TSMC • Intel</strong><br><br>
-                as well as public and research institutions such as<br>
+                as well as public and research institutions<br><br>
                 <strong>Caltrans • Ministry of Trade, Industry and Energy • MSIT • KAIST • KATECH • KISA</strong>
             </div>
         </section>
