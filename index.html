@@ -100,15 +100,15 @@
             align-items: start;
         }
 
-        .project:nth-child(even) {
+        .project:nth-of-type(even) {
             grid-template-columns: 1fr 1fr;
         }
 
-        .project:nth-child(even) .project-image {
+        .project:nth-of-type(even) .project-image {
             order: 2;
         }
 
-        .project:nth-child(even) .project-content {
+        .project:nth-of-type(even) .project-content {
             order: 1;
         }
 
@@ -440,9 +440,12 @@
                 gap: 32px;
             }
 
-            .project:nth-child(even) .project-image,
-            .project:nth-child(even) .project-content {
-                order: initial;
+            .project:nth-of-type(even) .project-image {
+                order: 1 !important;
+            }
+
+            .project:nth-of-type(even) .project-content {
+                order: 2 !important;
             }
 
             .project-image {
@@ -626,7 +629,7 @@
             </article>
 
             <!-- Project 2 -->
-            <article class="project">
+            <article class="project full-width">
                 <div class="project-content">
                     <div class="project-number">02</div>
                     <div class="project-label">KOTRA Korea Pavilion | 2025</div>
