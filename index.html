@@ -442,15 +442,18 @@
 
             .project:nth-child(even) .project-image,
             .project:nth-child(even) .project-content {
-                order: 0;
+                order: initial;
             }
 
-            .project-image,
-            .project.full-width .project-image {
+            .project-image {
                 position: static;
                 width: 100%;
                 aspect-ratio: 16/9;
                 max-height: none;
+            }
+
+            .project.full-width .project-image {
+                aspect-ratio: 16/9;
             }
 
             .hero {
@@ -564,14 +567,14 @@
 
                     <!-- Connection lines -->
                     <path class="connection-line sketch-element" 
-                          d="M 120 250 Q 200 150 320 100"/>
+                          d="M 120 250 Q 160 200 180 120"/>
                     
                     <!-- Floating dots/nodes -->
-                    <circle class="floating-dot sketch-element sketch-fill" cx="250" cy="170" r="8" 
+                    <circle class="floating-dot sketch-element sketch-fill" cx="140" cy="180" r="8" 
                             style="animation-delay: 0s"/>
-                    <circle class="floating-dot sketch-element sketch-fill" cx="180" cy="200" r="6" 
+                    <circle class="floating-dot sketch-element sketch-fill" cx="160" cy="140" r="6" 
                             style="animation-delay: 0.5s"/>
-                    <circle class="floating-dot sketch-element sketch-fill" cx="290" cy="130" r="7" 
+                    <circle class="floating-dot sketch-element sketch-fill" cx="120" cy="210" r="7" 
                             style="animation-delay: 1s"/>
 
                     <!-- Coffee cup -->
@@ -624,10 +627,6 @@
 
             <!-- Project 2 -->
             <article class="project">
-                <div class="project-image">
-                    Project Thumbnail<br>
-                    <small>Executive Roundtable</small>
-                </div>
                 <div class="project-content">
                     <div class="project-number">02</div>
                     <div class="project-label">KOTRA Korea Pavilion | 2025</div>
@@ -638,6 +637,10 @@
                     <a href="/cdn-cgi/l/email-protection#acd5d9c2cfc4cdc582d5dfeccbc1cdc5c082cfc3c1" class="request-details">
                         Request Details
                     </a>
+                </div>
+                <div class="project-image">
+                    Project Thumbnail<br>
+                    <small>Executive Roundtable</small>
                 </div>
             </article>
 
